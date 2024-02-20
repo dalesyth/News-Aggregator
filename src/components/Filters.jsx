@@ -1,11 +1,11 @@
-import { useState } from "react";
+import PropTypes from "prop-types";
 
-const Filters = () => {
-  const [category, setCategory] = useState("");
-
+const Filters = ({ setCategory }) => {
   const handleCategoryChange = (selectedCategory) => {
     setCategory(selectedCategory);
   };
+
+  //   console.log("category from Filters: ", category)
 
   return (
     <div className="dropdown">
@@ -77,6 +77,10 @@ const Filters = () => {
       </ul>
     </div>
   );
+};
+
+Filters.propTypes = {
+  setCategory: PropTypes.func.isRequired,
 };
 
 export default Filters;

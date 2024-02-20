@@ -8,6 +8,7 @@ function App() {
   const [category, setCategory] = useState("");
 
   useEffect(() => {
+    console.log("category from useEffect: ", category)
     const getHeadlines = async () => {
       try {
         const response = await getTopHeadlines(category);
