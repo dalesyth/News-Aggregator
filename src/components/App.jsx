@@ -1,14 +1,16 @@
 import { useState, useEffect } from "react";
 import { getTopHeadlines } from "../api/ApiCalls";
+import Filters from "./Filters";
 
 function App() {
   const [headlines, setHeadlines] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [category, setCategory] = useState("");
 
   useEffect(() => {
     const getHeadlines = async () => {
       try {
-        const response = await getTopHeadlines();
+        const response = await getTopHeadlines(category);
         console.log("response from getHeadlines: ", response);
 
         setHeadlines(response);
@@ -19,12 +21,13 @@ function App() {
       }
     };
     getHeadlines();
-  }, []);
+  }, [category]);
 
   console.log("headlines.articles from useeffect: ", headlines.articles);
 
   return (
     <>
+      <Filters setCategory={setCategory}/>
       <div>
         {isLoading ? (
           <p>Loading...</p>

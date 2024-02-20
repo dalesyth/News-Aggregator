@@ -21,7 +21,7 @@ const Filters = () => {
         <li>
           <button
             className="dropdown-item"
-            onClick={() => handleCategoryChange("Business")}
+            onClick={() => handleCategoryChange("business")}
           >
             Business
           </button>
@@ -29,7 +29,7 @@ const Filters = () => {
         <li>
           <button
             className="dropdown-item"
-            onClick={() => handleCategoryChange("Entertainment")}
+            onClick={() => handleCategoryChange("entertainment")}
           >
             Entertainment
           </button>
@@ -37,7 +37,7 @@ const Filters = () => {
         <li>
           <button
             className="dropdown-item"
-            onClick={() => handleCategoryChange("General")}
+            onClick={() => handleCategoryChange("general")}
           >
             General
           </button>
@@ -45,7 +45,7 @@ const Filters = () => {
         <li>
           <button
             className="dropdown-item"
-            onClick={() => handleCategoryChange("Health")}
+            onClick={() => handleCategoryChange("health")}
           >
             Health
           </button>
@@ -53,7 +53,7 @@ const Filters = () => {
         <li>
           <button
             className="dropdown-item"
-            onClick={() => handleCategoryChange("Science")}
+            onClick={() => handleCategoryChange("science")}
           >
             Science
           </button>
@@ -61,7 +61,7 @@ const Filters = () => {
         <li>
           <button
             className="dropdown-item"
-            onClick={() => handleCategoryChange("Sports")}
+            onClick={() => handleCategoryChange("sports")}
           >
             Sports
           </button>
@@ -69,7 +69,7 @@ const Filters = () => {
         <li>
           <button
             className="dropdown-item"
-            onClick={() => handleCategoryChange("Technology")}
+            onClick={() => handleCategoryChange("technology")}
           >
             Technology
           </button>
