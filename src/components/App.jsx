@@ -6,9 +6,10 @@ function App() {
   const [headlines, setHeadlines] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [category, setCategory] = useState("");
+  
 
   useEffect(() => {
-    console.log("category from useEffect: ", category)
+    console.log("category from useEffect: ", category);
     const getHeadlines = async () => {
       try {
         const response = await getTopHeadlines(category);
@@ -28,7 +29,7 @@ function App() {
 
   return (
     <>
-      <Filters setCategory={setCategory}/>
+      <Filters setCategory={setCategory} />
       <div>
         {isLoading ? (
           <p>Loading...</p>
@@ -37,37 +38,39 @@ function App() {
         ) : (
           <div>
             {headlines.articles.map((headline, index) => (
-              <div
-                key={index}
-                className="card mb-3"
-                style={{ maxWidth: "540px" }}
-              >
-                <div className="row g-0">
-                  <div className="col-md-4">
-                    <img
-                      src={headline.urlToImage}
-                      className="img-fluid rounded-start"
-                      alt="..."
-                    ></img>
-                  </div>
-                  <div className="col-md-8">
-                    <div className="card-body">
-                      <p className="text-danger fw-bold">
-                        {headline.source.name}
-                      </p>
-                      <h5 className="card-title">
-                        <a
-                          href={headline.url}
-                          style={{ textDecoration: "none" }}
-                        >
-                          {headline.title}
-                        </a>
-                      </h5>
+              <div key={index} className="card mb-3 mx-3">
+                {headline.content === "[Removed]" &&
+                headline.description === "[Removed]" &&
+                headline.title === "[Removed]" ? null : (
+                  <div className="row g-0">
+                    <div className="col-md-4">
+                      {headline.urlToImage ? (
+                        <img
+                          src={headline.urlToImage}
+                          className="img-fluid rounded-start"
+                          alt="..."
+                        ></img>
+                      ) : null}
+                    </div>
+                    <div className="col-md-8">
+                      <div className="card-body">
+                        <p className="text-danger fw-bold">
+                          {headline.source.name}
+                        </p>
+                        <h5 className="card-title">
+                          <a
+                            href={headline.url}
+                            style={{ textDecoration: "none" }}
+                          >
+                            {headline.title}
+                          </a>
+                        </h5>
 
-                      <p className="card-text">{headline.description}</p>
+                        <p className="card-text">{headline.description}</p>
+                      </div>
                     </div>
                   </div>
-                </div>
+                )}
               </div>
             ))}
           </div>

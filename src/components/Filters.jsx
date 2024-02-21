@@ -10,7 +10,7 @@ const Filters = ({ setCategory }) => {
   return (
     <div className="dropdown">
       <button
-        className="btn btn-secondary dropdown-toggle"
+        className="btn btn-secondary dropdown-toggle mx-3 mb-3"
         type="button"
         data-bs-toggle="dropdown"
         aria-expanded="false"
