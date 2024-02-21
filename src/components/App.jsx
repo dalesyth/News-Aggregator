@@ -6,14 +6,11 @@ function App() {
   const [headlines, setHeadlines] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [category, setCategory] = useState("");
-  
 
   useEffect(() => {
-    console.log("category from useEffect: ", category);
     const getHeadlines = async () => {
       try {
         const response = await getTopHeadlines(category);
-        console.log("response from getHeadlines: ", response);
 
         setHeadlines(response);
         setIsLoading(false);
@@ -25,8 +22,6 @@ function App() {
     getHeadlines();
   }, [category]);
 
-  console.log("headlines.articles from useeffect: ", headlines.articles);
-
   return (
     <>
       <Filters setCategory={setCategory} />
@@ -37,6 +32,9 @@ function App() {
           <p>No news items available</p>
         ) : (
           <div>
+            <h5 className="text-danger fw-bold mx-3 mb-3">
+              {category.toUpperCase()} HEADLINES
+            </h5>
             {headlines.articles.map((headline, index) => (
               <div key={index} className="card mb-3 mx-3">
                 {headline.content === "[Removed]" &&

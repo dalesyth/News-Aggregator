@@ -5,19 +5,17 @@ const Filters = ({ setCategory }) => {
     setCategory(selectedCategory);
   };
 
-  //   console.log("category from Filters: ", category)
-
   return (
     <div className="dropdown">
       <button
-        className="btn btn-secondary dropdown-toggle mx-3 mb-3"
+        className="btn btn-outline-dark dropdown-toggle mx-3 mb-5"
         type="button"
         data-bs-toggle="dropdown"
         aria-expanded="false"
       >
         Categories
       </button>
-      <ul className="dropdown-menu">
+      <ul className="dropdown-menu justify-centent-center">
         <li>
           <button
             className="dropdown-item"
